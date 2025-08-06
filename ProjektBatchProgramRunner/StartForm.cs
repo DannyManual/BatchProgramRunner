@@ -39,14 +39,14 @@ namespace BatchProgramRunner
             // assign Change Events to save Data in time
             foreach (DataTable table in dsBatchProgramRunner.Tables)
             {
-                table.RowChanged += Table_Changed;
-                table.RowDeleted += Table_Changed;
-                table.TableNewRow += Table_Changed;
-                table.ColumnChanged += Table_Changed;
+                table.RowChanged += table_Changed;
+                table.RowDeleted += table_Changed;
+                table.TableNewRow += table_Changed;
+                table.ColumnChanged += table_Changed;
             }
         }
 
-        private void Table_Changed(object sender, EventArgs e)
+        private void table_Changed(object sender, EventArgs e)
         {
             try
             {
@@ -91,16 +91,10 @@ namespace BatchProgramRunner
 
         private void txtPathToExe_TextChanged(object sender, EventArgs e)
         {
-            string path = ((TextBox)sender).Text;
-            if (File.Exists(path) && Path.GetExtension(path).Equals(".exe", StringComparison.OrdinalIgnoreCase))
-            {
-                rdChckStatPathToExe.ForeColor = Color.Green;
-            }
-            else
-            {
-                rdChckStatPathToExe.ForeColor = Color.LightGray;
-            }
+            updatePathCheck(sender);
         }
+
+        
 
         private void btnSaveBatchVal_Click(object sender, EventArgs e)
         {
@@ -149,6 +143,11 @@ namespace BatchProgramRunner
             prepareBatchrun();
         }
 
+        private void dgvBatchValues_SelectionChanged(object sender, EventArgs e)
+        {
+            prepareBatchrun();
+        }
+
         private void prepareBatchrun()
         {
             string cmdStr = buildCommandString();
@@ -184,10 +183,18 @@ namespace BatchProgramRunner
 
         }
 
-        
-        private void dgvBatchValues_SelectionChanged(object sender, EventArgs e)
+        private void updatePathCheck(object sender)
         {
-            prepareBatchrun();
+            string path = ((TextBox)sender).Text;
+            if (File.Exists(path) && Path.GetExtension(path).Equals(".exe", StringComparison.OrdinalIgnoreCase))
+            {
+                rdChckStatPathToExe.ForeColor = Color.Green;
+            }
+            else
+            {
+                rdChckStatPathToExe.ForeColor = Color.LightGray;
+            }
         }
+        
     }
 }
