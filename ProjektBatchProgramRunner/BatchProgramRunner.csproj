@@ -70,6 +70,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatchProcessArgs.cs" />
+    <Compile Include="BatchProcessResult.cs" />
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>

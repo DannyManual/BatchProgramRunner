@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -72,23 +72,29 @@
             this.Param = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsAssignedParams = new System.Windows.Forms.BindingSource(this.components);
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.scBatchRunner = new System.Windows.Forms.SplitContainer();
+            this.tlBatchValueMgmt = new System.Windows.Forms.TableLayoutPanel();
+            this.tlBatchValueAktion = new System.Windows.Forms.TableLayoutPanel();
             this.lblBatchValueList = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlBPLoadSave = new System.Windows.Forms.TableLayoutPanel();
             this.btnLoadBatchVal = new System.Windows.Forms.Button();
             this.btnSaveBatchVal = new System.Windows.Forms.Button();
             this.dgvBatchValues = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcBV_Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvcBV_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsBatchValues = new System.Windows.Forms.BindingSource(this.components);
+            this.tlBVLActions = new System.Windows.Forms.TableLayoutPanel();
+            this.btnMrkSelect = new System.Windows.Forms.Button();
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            this.btnSelectNone = new System.Windows.Forms.Button();
+            this.btnInvertSelect = new System.Windows.Forms.Button();
+            this.btnFilterSelect = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTemplateList = new System.Windows.Forms.Label();
             this.btnRunBatch = new System.Windows.Forms.Button();
             this.prgBatchProgress = new System.Windows.Forms.ProgressBar();
-            this.dgBatchLog = new System.Windows.Forms.DataGridView();
+            this.dgvBatchLog = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,7 +102,7 @@
             this.bsSelectedTemplate = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblTopTemplateEdit = new System.Windows.Forms.Label();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.scBatchRunnerMgmt = new System.Windows.Forms.SplitContainer();
             this.lblTopBatchRunner = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpTemp = new System.Windows.Forms.TabPage();
@@ -104,6 +110,8 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.bsSelectedAssValue = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.bwBatchRunner = new System.ComponentModel.BackgroundWorker();
+            this.cbWait = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -119,26 +127,27 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignedParams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAssignedParams)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scBatchRunner)).BeginInit();
+            this.scBatchRunner.Panel1.SuspendLayout();
+            this.scBatchRunner.Panel2.SuspendLayout();
+            this.scBatchRunner.SuspendLayout();
+            this.tlBatchValueMgmt.SuspendLayout();
+            this.tlBatchValueAktion.SuspendLayout();
+            this.tlBPLoadSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBatchValues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBatchValues)).BeginInit();
+            this.tlBVLActions.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBatchLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBatchLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSelectedTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scBatchRunnerMgmt)).BeginInit();
+            this.scBatchRunnerMgmt.Panel1.SuspendLayout();
+            this.scBatchRunnerMgmt.Panel2.SuspendLayout();
+            this.scBatchRunnerMgmt.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpTemp.SuspendLayout();
             this.tpBatchRunner.SuspendLayout();
@@ -395,14 +404,14 @@
             this.dgvAssignedParams.AllowUserToResizeColumns = false;
             this.dgvAssignedParams.AllowUserToResizeRows = false;
             this.dgvAssignedParams.AutoGenerateColumns = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAssignedParams.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAssignedParams.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAssignedParams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssignedParams.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -411,24 +420,24 @@
             this.Value});
             this.tableLayoutPanel4.SetColumnSpan(this.dgvAssignedParams, 4);
             this.dgvAssignedParams.DataSource = this.bsAssignedParams;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAssignedParams.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAssignedParams.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvAssignedParams, "dgvAssignedParams");
             this.dgvAssignedParams.Name = "dgvAssignedParams";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAssignedParams.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAssignedParams.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAssignedParams.RowHeadersVisible = false;
             // 
             // iDDataGridViewTextBoxColumn
@@ -468,48 +477,49 @@
             this.bsAssignedParams.DataMember = "Relation1";
             this.bsAssignedParams.DataSource = this.bsCommndTemplate;
             // 
-            // splitContainer4
+            // scBatchRunner
             // 
-            resources.ApplyResources(this.splitContainer4, "splitContainer4");
-            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer4.Name = "splitContainer4";
+            resources.ApplyResources(this.scBatchRunner, "scBatchRunner");
+            this.scBatchRunner.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scBatchRunner.Name = "scBatchRunner";
             // 
-            // splitContainer4.Panel1
+            // scBatchRunner.Panel1
             // 
-            resources.ApplyResources(this.splitContainer4.Panel1, "splitContainer4.Panel1");
-            this.splitContainer4.Panel1.Controls.Add(this.tableLayoutPanel5);
+            resources.ApplyResources(this.scBatchRunner.Panel1, "scBatchRunner.Panel1");
+            this.scBatchRunner.Panel1.Controls.Add(this.tlBatchValueMgmt);
             // 
-            // splitContainer4.Panel2
+            // scBatchRunner.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.tableLayoutPanel8);
+            this.scBatchRunner.Panel2.Controls.Add(this.tableLayoutPanel8);
             // 
-            // tableLayoutPanel5
+            // tlBatchValueMgmt
             // 
-            resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.dgvBatchValues, 0, 1);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            resources.ApplyResources(this.tlBatchValueMgmt, "tlBatchValueMgmt");
+            this.tlBatchValueMgmt.Controls.Add(this.tlBatchValueAktion, 0, 0);
+            this.tlBatchValueMgmt.Controls.Add(this.dgvBatchValues, 0, 1);
+            this.tlBatchValueMgmt.Controls.Add(this.tlBVLActions, 0, 2);
+            this.tlBatchValueMgmt.Name = "tlBatchValueMgmt";
             // 
-            // tableLayoutPanel6
+            // tlBatchValueAktion
             // 
-            resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
-            this.tableLayoutPanel6.Controls.Add(this.lblBatchValueList, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 1);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            resources.ApplyResources(this.tlBatchValueAktion, "tlBatchValueAktion");
+            this.tlBatchValueAktion.Controls.Add(this.lblBatchValueList, 0, 0);
+            this.tlBatchValueAktion.Controls.Add(this.tlBPLoadSave, 0, 1);
+            this.tlBatchValueAktion.Name = "tlBatchValueAktion";
             // 
             // lblBatchValueList
             // 
             resources.ApplyResources(this.lblBatchValueList, "lblBatchValueList");
-            this.tableLayoutPanel6.SetColumnSpan(this.lblBatchValueList, 2);
+            this.tlBatchValueAktion.SetColumnSpan(this.lblBatchValueList, 2);
             this.lblBatchValueList.Name = "lblBatchValueList";
             // 
-            // tableLayoutPanel7
+            // tlBPLoadSave
             // 
-            resources.ApplyResources(this.tableLayoutPanel7, "tableLayoutPanel7");
-            this.tableLayoutPanel6.SetColumnSpan(this.tableLayoutPanel7, 2);
-            this.tableLayoutPanel7.Controls.Add(this.btnLoadBatchVal, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.btnSaveBatchVal, 1, 0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            resources.ApplyResources(this.tlBPLoadSave, "tlBPLoadSave");
+            this.tlBatchValueAktion.SetColumnSpan(this.tlBPLoadSave, 2);
+            this.tlBPLoadSave.Controls.Add(this.btnLoadBatchVal, 0, 0);
+            this.tlBPLoadSave.Controls.Add(this.btnSaveBatchVal, 1, 0);
+            this.tlBPLoadSave.Name = "tlBPLoadSave";
             // 
             // btnLoadBatchVal
             // 
@@ -535,8 +545,8 @@
             this.dgvBatchValues.ColumnHeadersVisible = false;
             this.dgvBatchValues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
-            this.activeDataGridViewCheckBoxColumn,
-            this.valueDataGridViewTextBoxColumn});
+            this.dgvcBV_Active,
+            this.dgvcBV_Value});
             this.dgvBatchValues.DataSource = this.bsBatchValues;
             resources.ApplyResources(this.dgvBatchValues, "dgvBatchValues");
             this.dgvBatchValues.Name = "dgvBatchValues";
@@ -549,33 +559,79 @@
             resources.ApplyResources(this.iDDataGridViewTextBoxColumn1, "iDDataGridViewTextBoxColumn1");
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
             // 
-            // activeDataGridViewCheckBoxColumn
+            // dgvcBV_Active
             // 
-            this.activeDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
-            resources.ApplyResources(this.activeDataGridViewCheckBoxColumn, "activeDataGridViewCheckBoxColumn");
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.dgvcBV_Active.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgvcBV_Active.DataPropertyName = "Active";
+            resources.ApplyResources(this.dgvcBV_Active, "dgvcBV_Active");
+            this.dgvcBV_Active.Name = "dgvcBV_Active";
             // 
-            // valueDataGridViewTextBoxColumn
+            // dgvcBV_Value
             // 
-            this.valueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            resources.ApplyResources(this.valueDataGridViewTextBoxColumn, "valueDataGridViewTextBoxColumn");
-            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
+            this.dgvcBV_Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvcBV_Value.DataPropertyName = "Value";
+            resources.ApplyResources(this.dgvcBV_Value, "dgvcBV_Value");
+            this.dgvcBV_Value.Name = "dgvcBV_Value";
             // 
             // bsBatchValues
             // 
             this.bsBatchValues.DataMember = "dtBatchList";
             this.bsBatchValues.DataSource = this.dsBatchProgramRunner;
             // 
+            // tlBVLActions
+            // 
+            resources.ApplyResources(this.tlBVLActions, "tlBVLActions");
+            this.tlBVLActions.Controls.Add(this.btnMrkSelect, 2, 0);
+            this.tlBVLActions.Controls.Add(this.btnSelectAll, 0, 0);
+            this.tlBVLActions.Controls.Add(this.btnSelectNone, 1, 0);
+            this.tlBVLActions.Controls.Add(this.btnInvertSelect, 3, 0);
+            this.tlBVLActions.Controls.Add(this.btnFilterSelect, 4, 0);
+            this.tlBVLActions.Name = "tlBVLActions";
+            // 
+            // btnMrkSelect
+            // 
+            resources.ApplyResources(this.btnMrkSelect, "btnMrkSelect");
+            this.btnMrkSelect.Name = "btnMrkSelect";
+            this.btnMrkSelect.UseVisualStyleBackColor = true;
+            this.btnMrkSelect.Click += new System.EventHandler(this.btnMrkSelect_Click);
+            // 
+            // btnSelectAll
+            // 
+            resources.ApplyResources(this.btnSelectAll, "btnSelectAll");
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // btnSelectNone
+            // 
+            resources.ApplyResources(this.btnSelectNone, "btnSelectNone");
+            this.btnSelectNone.Name = "btnSelectNone";
+            this.btnSelectNone.UseVisualStyleBackColor = true;
+            this.btnSelectNone.Click += new System.EventHandler(this.btnSelectNone_Click);
+            // 
+            // btnInvertSelect
+            // 
+            resources.ApplyResources(this.btnInvertSelect, "btnInvertSelect");
+            this.btnInvertSelect.Name = "btnInvertSelect";
+            this.btnInvertSelect.UseVisualStyleBackColor = true;
+            this.btnInvertSelect.Click += new System.EventHandler(this.btnInvertSelect_Click);
+            // 
+            // btnFilterSelect
+            // 
+            resources.ApplyResources(this.btnFilterSelect, "btnFilterSelect");
+            this.btnFilterSelect.Name = "btnFilterSelect";
+            this.btnFilterSelect.UseVisualStyleBackColor = true;
+            this.btnFilterSelect.Click += new System.EventHandler(this.btnFilterSelect_Click);
+            // 
             // tableLayoutPanel8
             // 
             resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
             this.tableLayoutPanel8.Controls.Add(this.lblTemplateList, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.btnRunBatch, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.prgBatchProgress, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.dgBatchLog, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.btnRunBatch, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.prgBatchProgress, 4, 0);
+            this.tableLayoutPanel8.Controls.Add(this.dgvBatchLog, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.lstTemplateSelect, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cbWait, 2, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             // 
             // lblTemplateList
@@ -588,65 +644,73 @@
             resources.ApplyResources(this.btnRunBatch, "btnRunBatch");
             this.btnRunBatch.Name = "btnRunBatch";
             this.btnRunBatch.UseVisualStyleBackColor = true;
+            this.btnRunBatch.Click += new System.EventHandler(this.btnRunBatch_Click);
             // 
             // prgBatchProgress
             // 
             resources.ApplyResources(this.prgBatchProgress, "prgBatchProgress");
+            this.prgBatchProgress.MarqueeAnimationSpeed = 10;
             this.prgBatchProgress.Name = "prgBatchProgress";
+            this.prgBatchProgress.Step = 1;
+            this.prgBatchProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // dgBatchLog
+            // dgvBatchLog
             // 
-            this.dgBatchLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgBatchLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgBatchLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBatchLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBatchLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBatchLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBatchLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBatchLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.tableLayoutPanel8.SetColumnSpan(this.dgBatchLog, 4);
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgBatchLog.DefaultCellStyle = dataGridViewCellStyle11;
-            resources.ApplyResources(this.dgBatchLog, "dgBatchLog");
-            this.dgBatchLog.Name = "dgBatchLog";
-            this.dgBatchLog.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgBatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgBatchLog.RowHeadersVisible = false;
+            this.tableLayoutPanel8.SetColumnSpan(this.dgvBatchLog, 5);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBatchLog.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.dgvBatchLog, "dgvBatchLog");
+            this.dgvBatchLog.Name = "dgvBatchLog";
+            this.dgvBatchLog.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvBatchLog.RowHeadersVisible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.Frozen = true;
             resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn2.Frozen = true;
             resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.Frozen = true;
             resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -683,18 +747,18 @@
             resources.ApplyResources(this.lblTopTemplateEdit, "lblTopTemplateEdit");
             this.lblTopTemplateEdit.Name = "lblTopTemplateEdit";
             // 
-            // splitContainer3
+            // scBatchRunnerMgmt
             // 
-            resources.ApplyResources(this.splitContainer3, "splitContainer3");
-            this.splitContainer3.Name = "splitContainer3";
+            resources.ApplyResources(this.scBatchRunnerMgmt, "scBatchRunnerMgmt");
+            this.scBatchRunnerMgmt.Name = "scBatchRunnerMgmt";
             // 
-            // splitContainer3.Panel1
+            // scBatchRunnerMgmt.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.lblTopBatchRunner);
+            this.scBatchRunnerMgmt.Panel1.Controls.Add(this.lblTopBatchRunner);
             // 
-            // splitContainer3.Panel2
+            // scBatchRunnerMgmt.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
+            this.scBatchRunnerMgmt.Panel2.Controls.Add(this.scBatchRunner);
             // 
             // lblTopBatchRunner
             // 
@@ -718,7 +782,7 @@
             // 
             // tpBatchRunner
             // 
-            this.tpBatchRunner.Controls.Add(this.splitContainer3);
+            this.tpBatchRunner.Controls.Add(this.scBatchRunnerMgmt);
             resources.ApplyResources(this.tpBatchRunner, "tpBatchRunner");
             this.tpBatchRunner.Name = "tpBatchRunner";
             this.tpBatchRunner.UseVisualStyleBackColor = true;
@@ -728,6 +792,19 @@
             this.bsSelectedAssValue.DataMember = "Relation1";
             this.bsSelectedAssValue.DataSource = this.bsSelectedTemplate;
             this.bsSelectedAssValue.CurrentChanged += new System.EventHandler(this.lstTemplateSelect_SelectedIndexChanged);
+            // 
+            // bwBatchRunner
+            // 
+            this.bwBatchRunner.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwBatchRunner_DoWork);
+            this.bwBatchRunner.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwBatchRunner_RunWorkerCompleted);
+            // 
+            // cbWait
+            // 
+            resources.ApplyResources(this.cbWait, "cbWait");
+            this.cbWait.Checked = true;
+            this.cbWait.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbWait.Name = "cbWait";
+            this.cbWait.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -754,29 +831,31 @@
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignedParams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAssignedParams)).EndInit();
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
+            this.scBatchRunner.Panel1.ResumeLayout(false);
+            this.scBatchRunner.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scBatchRunner)).EndInit();
+            this.scBatchRunner.ResumeLayout(false);
+            this.tlBatchValueMgmt.ResumeLayout(false);
+            this.tlBatchValueMgmt.PerformLayout();
+            this.tlBatchValueAktion.ResumeLayout(false);
+            this.tlBatchValueAktion.PerformLayout();
+            this.tlBPLoadSave.ResumeLayout(false);
+            this.tlBPLoadSave.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBatchValues)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBatchValues)).EndInit();
+            this.tlBVLActions.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBatchLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBatchLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSelectedTemplate)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
+            this.scBatchRunnerMgmt.Panel1.ResumeLayout(false);
+            this.scBatchRunnerMgmt.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scBatchRunnerMgmt)).EndInit();
+            this.scBatchRunnerMgmt.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tpTemp.ResumeLayout(false);
             this.tpBatchRunner.ResumeLayout(false);
@@ -808,24 +887,21 @@
         private System.Windows.Forms.RadioButton rdChckStatPathToExe;
         private System.Windows.Forms.ListBox lstTemplates;
         private System.Windows.Forms.Label lblTopTemplateEdit;
-        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.SplitContainer scBatchRunnerMgmt;
         private System.Windows.Forms.Label lblTopBatchRunner;
-        private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.SplitContainer scBatchRunner;
+        private System.Windows.Forms.TableLayoutPanel tlBatchValueMgmt;
+        private System.Windows.Forms.TableLayoutPanel tlBatchValueAktion;
         private System.Windows.Forms.Label lblBatchValueList;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tlBPLoadSave;
         private System.Windows.Forms.Button btnLoadBatchVal;
         private System.Windows.Forms.Button btnSaveBatchVal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label lblTemplateList;
         private System.Windows.Forms.Button btnRunBatch;
         private System.Windows.Forms.ProgressBar prgBatchProgress;
-        private System.Windows.Forms.DataGridView dgBatchLog;
+        private System.Windows.Forms.DataGridView dgvBatchLog;
         private System.Windows.Forms.ComboBox lstTemplateSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Data.DataSet dsBatchProgramRunner;
         private System.Data.DataTable dtCommandTemplates;
         private System.Data.DataColumn dataColumn1;
@@ -850,11 +926,22 @@
         private System.Data.DataColumn dataColumn9;
         private System.Data.DataColumn dataColumn10;
         private System.Windows.Forms.DataGridView dgvBatchValues;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsBatchValues;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.TableLayoutPanel tlBVLActions;
+        private System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.Button btnSelectNone;
+        private System.Windows.Forms.Button btnInvertSelect;
+        private System.Windows.Forms.Button btnFilterSelect;
+        private System.Windows.Forms.Button btnMrkSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvcBV_Active;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcBV_Value;
+        private System.ComponentModel.BackgroundWorker bwBatchRunner;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.CheckBox cbWait;
     }
 }
 
