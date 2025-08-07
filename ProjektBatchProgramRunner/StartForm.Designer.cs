@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -100,6 +99,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstTemplateSelect = new System.Windows.Forms.ComboBox();
             this.bsSelectedTemplate = new System.Windows.Forms.BindingSource(this.components);
+            this.cbWait = new System.Windows.Forms.CheckBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblTopTemplateEdit = new System.Windows.Forms.Label();
             this.scBatchRunnerMgmt = new System.Windows.Forms.SplitContainer();
@@ -111,7 +111,6 @@
             this.bsSelectedAssValue = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.bwBatchRunner = new System.ComponentModel.BackgroundWorker();
-            this.cbWait = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -156,70 +155,139 @@
             // 
             // splitContainer2
             // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
-            resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
+            this.splitContainer2.Panel1.AutoScroll = true;
             this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel3);
+            this.splitContainer2.Panel1MinSize = 230;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel4);
+            this.splitContainer2.Panel2MinSize = 200;
+            this.splitContainer2.Size = new System.Drawing.Size(781, 282);
+            this.splitContainer2.SplitterDistance = 230;
+            this.splitContainer2.SplitterWidth = 1;
+            this.splitContainer2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
-            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lstTemplates, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 282);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.lblTempNewTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTempNewName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNewTempName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(230, 86);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTempNewTitle
             // 
-            resources.ApplyResources(this.lblTempNewTitle, "lblTempNewTitle");
+            this.lblTempNewTitle.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblTempNewTitle, 2);
+            this.lblTempNewTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTempNewTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTempNewTitle.Location = new System.Drawing.Point(3, 0);
             this.lblTempNewTitle.Name = "lblTempNewTitle";
+            this.lblTempNewTitle.Size = new System.Drawing.Size(224, 25);
+            this.lblTempNewTitle.TabIndex = 0;
+            this.lblTempNewTitle.Text = "New Templates";
+            this.lblTempNewTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTempNewName
             // 
-            resources.ApplyResources(this.lblTempNewName, "lblTempNewName");
+            this.lblTempNewName.AutoSize = true;
+            this.lblTempNewName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTempNewName.Location = new System.Drawing.Point(0, 25);
+            this.lblTempNewName.Margin = new System.Windows.Forms.Padding(0);
             this.lblTempNewName.Name = "lblTempNewName";
+            this.lblTempNewName.Size = new System.Drawing.Size(63, 26);
+            this.lblTempNewName.TabIndex = 1;
+            this.lblTempNewName.Text = "New Name:";
+            this.lblTempNewName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNewTempName
             // 
-            resources.ApplyResources(this.txtNewTempName, "txtNewTempName");
+            this.txtNewTempName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNewTempName.Location = new System.Drawing.Point(66, 28);
             this.txtNewTempName.Name = "txtNewTempName";
+            this.txtNewTempName.Size = new System.Drawing.Size(161, 20);
+            this.txtNewTempName.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 2);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.btnAddTemplate, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnRemoveTemplate, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 54);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(224, 29);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btnAddTemplate
             // 
-            resources.ApplyResources(this.btnAddTemplate, "btnAddTemplate");
+            this.btnAddTemplate.AutoSize = true;
+            this.btnAddTemplate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddTemplate.Location = new System.Drawing.Point(3, 3);
             this.btnAddTemplate.Name = "btnAddTemplate";
+            this.btnAddTemplate.Size = new System.Drawing.Size(68, 23);
+            this.btnAddTemplate.TabIndex = 0;
+            this.btnAddTemplate.Text = "Add";
             this.btnAddTemplate.UseVisualStyleBackColor = true;
             this.btnAddTemplate.Click += new System.EventHandler(this.btnAddTemplate_Click);
             // 
             // btnRemoveTemplate
             // 
-            resources.ApplyResources(this.btnRemoveTemplate, "btnRemoveTemplate");
+            this.btnRemoveTemplate.AutoSize = true;
+            this.btnRemoveTemplate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRemoveTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveTemplate.Location = new System.Drawing.Point(77, 3);
             this.btnRemoveTemplate.Name = "btnRemoveTemplate";
+            this.btnRemoveTemplate.Size = new System.Drawing.Size(68, 23);
+            this.btnRemoveTemplate.TabIndex = 1;
+            this.btnRemoveTemplate.Text = "Remove";
             this.btnRemoveTemplate.UseVisualStyleBackColor = true;
             this.btnRemoveTemplate.Click += new System.EventHandler(this.btnRemoveTemplate_Click);
             // 
@@ -227,9 +295,12 @@
             // 
             this.lstTemplates.DataSource = this.bsCommndTemplate;
             this.lstTemplates.DisplayMember = "Name";
-            resources.ApplyResources(this.lstTemplates, "lstTemplates");
+            this.lstTemplates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstTemplates.FormattingEnabled = true;
+            this.lstTemplates.Location = new System.Drawing.Point(3, 89);
             this.lstTemplates.Name = "lstTemplates";
+            this.lstTemplates.Size = new System.Drawing.Size(224, 190);
+            this.lstTemplates.TabIndex = 1;
             this.lstTemplates.ValueMember = "Name";
             // 
             // bsCommndTemplate
@@ -357,45 +428,79 @@
             // 
             // tableLayoutPanel4
             // 
-            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.Controls.Add(this.lblPathToExe, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtPathToExe, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnOpenPathToEXE, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.rdChckStatPathToExe, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.dgvAssignedParams, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(550, 282);
+            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // lblPathToExe
             // 
-            resources.ApplyResources(this.lblPathToExe, "lblPathToExe");
+            this.lblPathToExe.AutoSize = true;
+            this.lblPathToExe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPathToExe.Location = new System.Drawing.Point(0, 0);
+            this.lblPathToExe.Margin = new System.Windows.Forms.Padding(0);
             this.lblPathToExe.Name = "lblPathToExe";
+            this.lblPathToExe.Size = new System.Drawing.Size(68, 29);
+            this.lblPathToExe.TabIndex = 1;
+            this.lblPathToExe.Text = "Path to EXE:";
+            this.lblPathToExe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPathToExe
             // 
             this.txtPathToExe.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCommndTemplate, "CommandPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            resources.ApplyResources(this.txtPathToExe, "txtPathToExe");
+            this.txtPathToExe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPathToExe.Location = new System.Drawing.Point(71, 3);
             this.txtPathToExe.Name = "txtPathToExe";
+            this.txtPathToExe.Size = new System.Drawing.Size(399, 20);
+            this.txtPathToExe.TabIndex = 0;
             this.txtPathToExe.TextChanged += new System.EventHandler(this.txtPathToExe_TextChanged);
             // 
             // btnOpenPathToEXE
             // 
-            resources.ApplyResources(this.btnOpenPathToEXE, "btnOpenPathToEXE");
+            this.btnOpenPathToEXE.AutoSize = true;
+            this.btnOpenPathToEXE.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOpenPathToEXE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpenPathToEXE.Location = new System.Drawing.Point(476, 3);
             this.btnOpenPathToEXE.Name = "btnOpenPathToEXE";
+            this.btnOpenPathToEXE.Size = new System.Drawing.Size(52, 23);
+            this.btnOpenPathToEXE.TabIndex = 2;
+            this.btnOpenPathToEXE.Text = "Open...";
             this.btnOpenPathToEXE.UseVisualStyleBackColor = true;
             this.btnOpenPathToEXE.Click += new System.EventHandler(this.btnOpenPathToEXE_Click);
             // 
             // rdChckStatPathToExe
             // 
             this.rdChckStatPathToExe.AutoCheck = false;
-            resources.ApplyResources(this.rdChckStatPathToExe, "rdChckStatPathToExe");
+            this.rdChckStatPathToExe.AutoSize = true;
             this.rdChckStatPathToExe.BackColor = System.Drawing.Color.Transparent;
+            this.rdChckStatPathToExe.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdChckStatPathToExe.Checked = true;
             this.rdChckStatPathToExe.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rdChckStatPathToExe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rdChckStatPathToExe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.rdChckStatPathToExe.FlatAppearance.BorderSize = 5;
             this.rdChckStatPathToExe.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.rdChckStatPathToExe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rdChckStatPathToExe.ForeColor = System.Drawing.Color.Red;
+            this.rdChckStatPathToExe.Location = new System.Drawing.Point(534, 3);
             this.rdChckStatPathToExe.Name = "rdChckStatPathToExe";
+            this.rdChckStatPathToExe.Size = new System.Drawing.Size(13, 23);
+            this.rdChckStatPathToExe.TabIndex = 1;
             this.rdChckStatPathToExe.TabStop = true;
             this.rdChckStatPathToExe.UseVisualStyleBackColor = false;
             // 
@@ -428,7 +533,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAssignedParams.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.dgvAssignedParams, "dgvAssignedParams");
+            this.dgvAssignedParams.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAssignedParams.Location = new System.Drawing.Point(3, 32);
             this.dgvAssignedParams.Name = "dgvAssignedParams";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -439,28 +545,32 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAssignedParams.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAssignedParams.RowHeadersVisible = false;
+            this.dgvAssignedParams.Size = new System.Drawing.Size(544, 247);
+            this.dgvAssignedParams.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            resources.ApplyResources(this.iDDataGridViewTextBoxColumn, "iDDataGridViewTextBoxColumn");
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
             // 
             // dtCT_ID
             // 
             this.dtCT_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dtCT_ID.DataPropertyName = "dtCT_ID";
             this.dtCT_ID.FillWeight = 20F;
-            resources.ApplyResources(this.dtCT_ID, "dtCT_ID");
+            this.dtCT_ID.HeaderText = "dtCT_ID";
             this.dtCT_ID.Name = "dtCT_ID";
             this.dtCT_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dtCT_ID.Visible = false;
             // 
             // Param
             // 
             this.Param.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Param.DataPropertyName = "Param";
-            resources.ApplyResources(this.Param, "Param");
+            this.Param.HeaderText = "Param";
             this.Param.Name = "Param";
             this.Param.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -468,7 +578,7 @@
             // 
             this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Value.DataPropertyName = "Value";
-            resources.ApplyResources(this.Value, "Value");
+            this.Value.HeaderText = "Value";
             this.Value.Name = "Value";
             this.Value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -479,59 +589,116 @@
             // 
             // scBatchRunner
             // 
-            resources.ApplyResources(this.scBatchRunner, "scBatchRunner");
+            this.scBatchRunner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scBatchRunner.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scBatchRunner.IsSplitterFixed = true;
+            this.scBatchRunner.Location = new System.Drawing.Point(0, 0);
             this.scBatchRunner.Name = "scBatchRunner";
             // 
             // scBatchRunner.Panel1
             // 
-            resources.ApplyResources(this.scBatchRunner.Panel1, "scBatchRunner.Panel1");
+            this.scBatchRunner.Panel1.AutoScroll = true;
             this.scBatchRunner.Panel1.Controls.Add(this.tlBatchValueMgmt);
+            this.scBatchRunner.Panel1MinSize = 230;
             // 
             // scBatchRunner.Panel2
             // 
             this.scBatchRunner.Panel2.Controls.Add(this.tableLayoutPanel8);
+            this.scBatchRunner.Panel2MinSize = 200;
+            this.scBatchRunner.Size = new System.Drawing.Size(781, 282);
+            this.scBatchRunner.SplitterDistance = 230;
+            this.scBatchRunner.SplitterWidth = 1;
+            this.scBatchRunner.TabIndex = 0;
             // 
             // tlBatchValueMgmt
             // 
-            resources.ApplyResources(this.tlBatchValueMgmt, "tlBatchValueMgmt");
+            this.tlBatchValueMgmt.ColumnCount = 1;
+            this.tlBatchValueMgmt.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlBatchValueMgmt.Controls.Add(this.tlBatchValueAktion, 0, 0);
             this.tlBatchValueMgmt.Controls.Add(this.dgvBatchValues, 0, 1);
             this.tlBatchValueMgmt.Controls.Add(this.tlBVLActions, 0, 2);
+            this.tlBatchValueMgmt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlBatchValueMgmt.Location = new System.Drawing.Point(0, 0);
             this.tlBatchValueMgmt.Name = "tlBatchValueMgmt";
+            this.tlBatchValueMgmt.RowCount = 3;
+            this.tlBatchValueMgmt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlBatchValueMgmt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlBatchValueMgmt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlBatchValueMgmt.Size = new System.Drawing.Size(230, 282);
+            this.tlBatchValueMgmt.TabIndex = 0;
             // 
             // tlBatchValueAktion
             // 
-            resources.ApplyResources(this.tlBatchValueAktion, "tlBatchValueAktion");
+            this.tlBatchValueAktion.ColumnCount = 2;
+            this.tlBatchValueAktion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlBatchValueAktion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlBatchValueAktion.Controls.Add(this.lblBatchValueList, 0, 0);
             this.tlBatchValueAktion.Controls.Add(this.tlBPLoadSave, 0, 1);
+            this.tlBatchValueAktion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlBatchValueAktion.Location = new System.Drawing.Point(0, 0);
+            this.tlBatchValueAktion.Margin = new System.Windows.Forms.Padding(0);
             this.tlBatchValueAktion.Name = "tlBatchValueAktion";
+            this.tlBatchValueAktion.RowCount = 2;
+            this.tlBatchValueAktion.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlBatchValueAktion.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlBatchValueAktion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlBatchValueAktion.Size = new System.Drawing.Size(230, 44);
+            this.tlBatchValueAktion.TabIndex = 0;
             // 
             // lblBatchValueList
             // 
-            resources.ApplyResources(this.lblBatchValueList, "lblBatchValueList");
+            this.lblBatchValueList.AutoSize = true;
             this.tlBatchValueAktion.SetColumnSpan(this.lblBatchValueList, 2);
+            this.lblBatchValueList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblBatchValueList.Location = new System.Drawing.Point(3, 0);
             this.lblBatchValueList.Name = "lblBatchValueList";
+            this.lblBatchValueList.Size = new System.Drawing.Size(224, 13);
+            this.lblBatchValueList.TabIndex = 0;
+            this.lblBatchValueList.Text = "Batch Value List";
+            this.lblBatchValueList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tlBPLoadSave
             // 
-            resources.ApplyResources(this.tlBPLoadSave, "tlBPLoadSave");
+            this.tlBPLoadSave.AutoSize = true;
+            this.tlBPLoadSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlBPLoadSave.ColumnCount = 2;
             this.tlBatchValueAktion.SetColumnSpan(this.tlBPLoadSave, 2);
+            this.tlBPLoadSave.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlBPLoadSave.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlBPLoadSave.Controls.Add(this.btnLoadBatchVal, 0, 0);
             this.tlBPLoadSave.Controls.Add(this.btnSaveBatchVal, 1, 0);
+            this.tlBPLoadSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlBPLoadSave.Location = new System.Drawing.Point(3, 16);
             this.tlBPLoadSave.Name = "tlBPLoadSave";
+            this.tlBPLoadSave.RowCount = 1;
+            this.tlBPLoadSave.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlBPLoadSave.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tlBPLoadSave.Size = new System.Drawing.Size(224, 29);
+            this.tlBPLoadSave.TabIndex = 1;
             // 
             // btnLoadBatchVal
             // 
-            resources.ApplyResources(this.btnLoadBatchVal, "btnLoadBatchVal");
+            this.btnLoadBatchVal.AutoSize = true;
+            this.btnLoadBatchVal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLoadBatchVal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoadBatchVal.Location = new System.Drawing.Point(3, 3);
             this.btnLoadBatchVal.Name = "btnLoadBatchVal";
+            this.btnLoadBatchVal.Size = new System.Drawing.Size(106, 23);
+            this.btnLoadBatchVal.TabIndex = 0;
+            this.btnLoadBatchVal.Text = "Load...";
             this.btnLoadBatchVal.UseVisualStyleBackColor = true;
             this.btnLoadBatchVal.Click += new System.EventHandler(this.btnLoadBatchVal_Click);
             // 
             // btnSaveBatchVal
             // 
-            resources.ApplyResources(this.btnSaveBatchVal, "btnSaveBatchVal");
+            this.btnSaveBatchVal.AutoSize = true;
+            this.btnSaveBatchVal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSaveBatchVal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSaveBatchVal.Location = new System.Drawing.Point(115, 3);
             this.btnSaveBatchVal.Name = "btnSaveBatchVal";
+            this.btnSaveBatchVal.Size = new System.Drawing.Size(106, 23);
+            this.btnSaveBatchVal.TabIndex = 1;
+            this.btnSaveBatchVal.Text = "Save...";
             this.btnSaveBatchVal.UseVisualStyleBackColor = true;
             this.btnSaveBatchVal.Click += new System.EventHandler(this.btnSaveBatchVal_Click);
             // 
@@ -548,29 +715,36 @@
             this.dgvcBV_Active,
             this.dgvcBV_Value});
             this.dgvBatchValues.DataSource = this.bsBatchValues;
-            resources.ApplyResources(this.dgvBatchValues, "dgvBatchValues");
+            this.dgvBatchValues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBatchValues.Location = new System.Drawing.Point(0, 44);
+            this.dgvBatchValues.Margin = new System.Windows.Forms.Padding(0);
             this.dgvBatchValues.Name = "dgvBatchValues";
+            this.dgvBatchValues.RowHeadersWidth = 20;
             this.dgvBatchValues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvBatchValues.Size = new System.Drawing.Size(230, 213);
+            this.dgvBatchValues.TabIndex = 4;
             this.dgvBatchValues.SelectionChanged += new System.EventHandler(this.dgvBatchValues_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn1
             // 
             this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            resources.ApplyResources(this.iDDataGridViewTextBoxColumn1, "iDDataGridViewTextBoxColumn1");
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.Visible = false;
             // 
             // dgvcBV_Active
             // 
             this.dgvcBV_Active.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dgvcBV_Active.DataPropertyName = "Active";
-            resources.ApplyResources(this.dgvcBV_Active, "dgvcBV_Active");
+            this.dgvcBV_Active.HeaderText = "Active";
             this.dgvcBV_Active.Name = "dgvcBV_Active";
+            this.dgvcBV_Active.Width = 5;
             // 
             // dgvcBV_Value
             // 
             this.dgvcBV_Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvcBV_Value.DataPropertyName = "Value";
-            resources.ApplyResources(this.dgvcBV_Value, "dgvcBV_Value");
+            this.dgvcBV_Value.HeaderText = "Value";
             this.dgvcBV_Value.Name = "dgvcBV_Value";
             // 
             // bsBatchValues
@@ -580,79 +754,151 @@
             // 
             // tlBVLActions
             // 
-            resources.ApplyResources(this.tlBVLActions, "tlBVLActions");
+            this.tlBVLActions.AutoSize = true;
+            this.tlBVLActions.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlBVLActions.ColumnCount = 5;
+            this.tlBVLActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlBVLActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlBVLActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlBVLActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlBVLActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlBVLActions.Controls.Add(this.btnMrkSelect, 2, 0);
             this.tlBVLActions.Controls.Add(this.btnSelectAll, 0, 0);
             this.tlBVLActions.Controls.Add(this.btnSelectNone, 1, 0);
             this.tlBVLActions.Controls.Add(this.btnInvertSelect, 3, 0);
             this.tlBVLActions.Controls.Add(this.btnFilterSelect, 4, 0);
+            this.tlBVLActions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlBVLActions.Location = new System.Drawing.Point(0, 257);
+            this.tlBVLActions.Margin = new System.Windows.Forms.Padding(0);
+            this.tlBVLActions.MinimumSize = new System.Drawing.Size(25, 25);
             this.tlBVLActions.Name = "tlBVLActions";
+            this.tlBVLActions.RowCount = 1;
+            this.tlBVLActions.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlBVLActions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlBVLActions.Size = new System.Drawing.Size(230, 25);
+            this.tlBVLActions.TabIndex = 5;
             // 
             // btnMrkSelect
             // 
-            resources.ApplyResources(this.btnMrkSelect, "btnMrkSelect");
+            this.btnMrkSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMrkSelect.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnMrkSelect.Location = new System.Drawing.Point(92, 0);
+            this.btnMrkSelect.Margin = new System.Windows.Forms.Padding(0);
             this.btnMrkSelect.Name = "btnMrkSelect";
+            this.btnMrkSelect.Size = new System.Drawing.Size(46, 25);
+            this.btnMrkSelect.TabIndex = 4;
+            this.btnMrkSelect.Text = "MarkS";
             this.btnMrkSelect.UseVisualStyleBackColor = true;
             this.btnMrkSelect.Click += new System.EventHandler(this.btnMrkSelect_Click);
             // 
             // btnSelectAll
             // 
-            resources.ApplyResources(this.btnSelectAll, "btnSelectAll");
+            this.btnSelectAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSelectAll.Location = new System.Drawing.Point(0, 0);
+            this.btnSelectAll.Margin = new System.Windows.Forms.Padding(0);
             this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(46, 25);
+            this.btnSelectAll.TabIndex = 0;
+            this.btnSelectAll.Text = "All";
             this.btnSelectAll.UseVisualStyleBackColor = true;
             this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // btnSelectNone
             // 
-            resources.ApplyResources(this.btnSelectNone, "btnSelectNone");
+            this.btnSelectNone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSelectNone.Location = new System.Drawing.Point(46, 0);
+            this.btnSelectNone.Margin = new System.Windows.Forms.Padding(0);
             this.btnSelectNone.Name = "btnSelectNone";
+            this.btnSelectNone.Size = new System.Drawing.Size(46, 25);
+            this.btnSelectNone.TabIndex = 1;
+            this.btnSelectNone.Text = "None";
             this.btnSelectNone.UseVisualStyleBackColor = true;
             this.btnSelectNone.Click += new System.EventHandler(this.btnSelectNone_Click);
             // 
             // btnInvertSelect
             // 
-            resources.ApplyResources(this.btnInvertSelect, "btnInvertSelect");
+            this.btnInvertSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInvertSelect.Location = new System.Drawing.Point(138, 0);
+            this.btnInvertSelect.Margin = new System.Windows.Forms.Padding(0);
             this.btnInvertSelect.Name = "btnInvertSelect";
+            this.btnInvertSelect.Size = new System.Drawing.Size(46, 25);
+            this.btnInvertSelect.TabIndex = 2;
+            this.btnInvertSelect.Text = "Invert";
             this.btnInvertSelect.UseVisualStyleBackColor = true;
             this.btnInvertSelect.Click += new System.EventHandler(this.btnInvertSelect_Click);
             // 
             // btnFilterSelect
             // 
-            resources.ApplyResources(this.btnFilterSelect, "btnFilterSelect");
+            this.btnFilterSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFilterSelect.Enabled = false;
+            this.btnFilterSelect.Location = new System.Drawing.Point(184, 0);
+            this.btnFilterSelect.Margin = new System.Windows.Forms.Padding(0);
             this.btnFilterSelect.Name = "btnFilterSelect";
+            this.btnFilterSelect.Size = new System.Drawing.Size(46, 25);
+            this.btnFilterSelect.TabIndex = 3;
+            this.btnFilterSelect.Text = "FilterS";
             this.btnFilterSelect.UseVisualStyleBackColor = true;
             this.btnFilterSelect.Click += new System.EventHandler(this.btnFilterSelect_Click);
             // 
             // tableLayoutPanel8
             // 
-            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.ColumnCount = 5;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel8.Controls.Add(this.lblTemplateList, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.btnRunBatch, 3, 0);
             this.tableLayoutPanel8.Controls.Add(this.prgBatchProgress, 4, 0);
             this.tableLayoutPanel8.Controls.Add(this.dgvBatchLog, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.lstTemplateSelect, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.cbWait, 2, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(550, 282);
+            this.tableLayoutPanel8.TabIndex = 1;
             // 
             // lblTemplateList
             // 
-            resources.ApplyResources(this.lblTemplateList, "lblTemplateList");
+            this.lblTemplateList.AutoSize = true;
+            this.lblTemplateList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTemplateList.Location = new System.Drawing.Point(0, 0);
+            this.lblTemplateList.Margin = new System.Windows.Forms.Padding(0);
             this.lblTemplateList.Name = "lblTemplateList";
+            this.lblTemplateList.Size = new System.Drawing.Size(54, 37);
+            this.lblTemplateList.TabIndex = 1;
+            this.lblTemplateList.Text = "Template:";
+            this.lblTemplateList.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnRunBatch
             // 
-            resources.ApplyResources(this.btnRunBatch, "btnRunBatch");
+            this.btnRunBatch.AutoSize = true;
+            this.btnRunBatch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRunBatch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRunBatch.Location = new System.Drawing.Point(425, 3);
             this.btnRunBatch.Name = "btnRunBatch";
+            this.btnRunBatch.Size = new System.Drawing.Size(39, 31);
+            this.btnRunBatch.TabIndex = 4;
+            this.btnRunBatch.Text = "Start";
             this.btnRunBatch.UseVisualStyleBackColor = true;
             this.btnRunBatch.Click += new System.EventHandler(this.btnRunBatch_Click);
             // 
             // prgBatchProgress
             // 
-            resources.ApplyResources(this.prgBatchProgress, "prgBatchProgress");
+            this.prgBatchProgress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prgBatchProgress.Location = new System.Drawing.Point(470, 3);
             this.prgBatchProgress.MarqueeAnimationSpeed = 10;
             this.prgBatchProgress.Name = "prgBatchProgress";
+            this.prgBatchProgress.Size = new System.Drawing.Size(77, 31);
             this.prgBatchProgress.Step = 1;
             this.prgBatchProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prgBatchProgress.TabIndex = 3;
             // 
             // dgvBatchLog
             // 
@@ -679,7 +925,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBatchLog.DefaultCellStyle = dataGridViewCellStyle5;
-            resources.ApplyResources(this.dgvBatchLog, "dgvBatchLog");
+            this.dgvBatchLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBatchLog.Location = new System.Drawing.Point(3, 40);
             this.dgvBatchLog.Name = "dgvBatchLog";
             this.dgvBatchLog.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -691,37 +938,45 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBatchLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBatchLog.RowHeadersVisible = false;
+            this.dgvBatchLog.Size = new System.Drawing.Size(544, 239);
+            this.dgvBatchLog.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn1.Frozen = true;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.HeaderText = "Command";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 414;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn2.Frozen = true;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.HeaderText = "ExitCode";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 74;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.Frozen = true;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.HeaderText = "Stdout";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 63;
             // 
             // lstTemplateSelect
             // 
             this.lstTemplateSelect.DataSource = this.bsSelectedTemplate;
             this.lstTemplateSelect.DisplayMember = "Name";
-            resources.ApplyResources(this.lstTemplateSelect, "lstTemplateSelect");
+            this.lstTemplateSelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstTemplateSelect.FormattingEnabled = true;
+            this.lstTemplateSelect.Location = new System.Drawing.Point(57, 3);
             this.lstTemplateSelect.Name = "lstTemplateSelect";
+            this.lstTemplateSelect.Size = new System.Drawing.Size(323, 21);
+            this.lstTemplateSelect.TabIndex = 2;
             this.lstTemplateSelect.ValueMember = "CommandPath";
             // 
             // bsSelectedTemplate
@@ -729,10 +984,26 @@
             this.bsSelectedTemplate.DataMember = "dtCommandTemplates";
             this.bsSelectedTemplate.DataSource = this.dsBatchProgramRunner;
             // 
+            // cbWait
+            // 
+            this.cbWait.AutoSize = true;
+            this.cbWait.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cbWait.Checked = true;
+            this.cbWait.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbWait.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbWait.Location = new System.Drawing.Point(386, 3);
+            this.cbWait.Name = "cbWait";
+            this.cbWait.Size = new System.Drawing.Size(33, 31);
+            this.cbWait.TabIndex = 5;
+            this.cbWait.Text = "Wait";
+            this.cbWait.UseVisualStyleBackColor = true;
+            // 
             // splitContainer1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -741,16 +1012,27 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(781, 319);
+            this.splitContainer1.SplitterDistance = 33;
+            this.splitContainer1.TabIndex = 0;
             // 
             // lblTopTemplateEdit
             // 
-            resources.ApplyResources(this.lblTopTemplateEdit, "lblTopTemplateEdit");
+            this.lblTopTemplateEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTopTemplateEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblTopTemplateEdit.Location = new System.Drawing.Point(0, 0);
             this.lblTopTemplateEdit.Name = "lblTopTemplateEdit";
+            this.lblTopTemplateEdit.Size = new System.Drawing.Size(781, 33);
+            this.lblTopTemplateEdit.TabIndex = 0;
+            this.lblTopTemplateEdit.Text = "Template Editor";
+            this.lblTopTemplateEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // scBatchRunnerMgmt
             // 
-            resources.ApplyResources(this.scBatchRunnerMgmt, "scBatchRunnerMgmt");
+            this.scBatchRunnerMgmt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scBatchRunnerMgmt.Location = new System.Drawing.Point(3, 3);
             this.scBatchRunnerMgmt.Name = "scBatchRunnerMgmt";
+            this.scBatchRunnerMgmt.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // scBatchRunnerMgmt.Panel1
             // 
@@ -759,32 +1041,52 @@
             // scBatchRunnerMgmt.Panel2
             // 
             this.scBatchRunnerMgmt.Panel2.Controls.Add(this.scBatchRunner);
+            this.scBatchRunnerMgmt.Size = new System.Drawing.Size(781, 319);
+            this.scBatchRunnerMgmt.SplitterDistance = 33;
+            this.scBatchRunnerMgmt.TabIndex = 1;
             // 
             // lblTopBatchRunner
             // 
-            resources.ApplyResources(this.lblTopBatchRunner, "lblTopBatchRunner");
+            this.lblTopBatchRunner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTopBatchRunner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblTopBatchRunner.Location = new System.Drawing.Point(0, 0);
             this.lblTopBatchRunner.Name = "lblTopBatchRunner";
+            this.lblTopBatchRunner.Size = new System.Drawing.Size(781, 33);
+            this.lblTopBatchRunner.TabIndex = 0;
+            this.lblTopBatchRunner.Text = "Batch Runner";
+            this.lblTopBatchRunner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpTemp);
             this.tabControl1.Controls.Add(this.tpBatchRunner);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(5, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(795, 351);
+            this.tabControl1.TabIndex = 0;
             // 
             // tpTemp
             // 
             this.tpTemp.Controls.Add(this.splitContainer1);
-            resources.ApplyResources(this.tpTemp, "tpTemp");
+            this.tpTemp.Location = new System.Drawing.Point(4, 22);
             this.tpTemp.Name = "tpTemp";
+            this.tpTemp.Padding = new System.Windows.Forms.Padding(3);
+            this.tpTemp.Size = new System.Drawing.Size(787, 325);
+            this.tpTemp.TabIndex = 0;
+            this.tpTemp.Text = "Templates";
             this.tpTemp.UseVisualStyleBackColor = true;
             // 
             // tpBatchRunner
             // 
             this.tpBatchRunner.Controls.Add(this.scBatchRunnerMgmt);
-            resources.ApplyResources(this.tpBatchRunner, "tpBatchRunner");
+            this.tpBatchRunner.Location = new System.Drawing.Point(4, 22);
             this.tpBatchRunner.Name = "tpBatchRunner";
+            this.tpBatchRunner.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBatchRunner.Size = new System.Drawing.Size(787, 325);
+            this.tpBatchRunner.TabIndex = 1;
+            this.tpBatchRunner.Text = "Batch Runner";
             this.tpBatchRunner.UseVisualStyleBackColor = true;
             // 
             // bsSelectedAssValue
@@ -798,21 +1100,19 @@
             this.bwBatchRunner.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwBatchRunner_DoWork);
             this.bwBatchRunner.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwBatchRunner_RunWorkerCompleted);
             // 
-            // cbWait
-            // 
-            resources.ApplyResources(this.cbWait, "cbWait");
-            this.cbWait.Checked = true;
-            this.cbWait.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbWait.Name = "cbWait";
-            this.cbWait.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(805, 361);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "frmMain";
+            this.Padding = new System.Windows.Forms.Padding(5);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Batch Programm Runner";
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();

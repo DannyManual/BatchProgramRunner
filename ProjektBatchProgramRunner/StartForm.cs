@@ -325,7 +325,8 @@ namespace BatchProgramRunner
                     Arguments = args.args,
                     RedirectStandardOutput = args.wait ? true : false,
                     UseShellExecute = args.wait ? false : true,
-                    CreateNoWindow = true
+                    CreateNoWindow = true,
+                    StandardOutputEncoding = Encoding.GetEncoding("CP858")
                 };
 
                 using (Process proc = Process.Start(psi))

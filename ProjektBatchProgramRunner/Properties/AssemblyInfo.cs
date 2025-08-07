@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("WindowsFormsApp2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Batch Command Runner")]
+[assembly: AssemblyDescription("Runs predefined commands with its args against a batch value list.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormsApp2")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
+[assembly: AssemblyProduct("BatchProgrammRunner")]
+[assembly: AssemblyCopyright("Copyright ©Daniel Butz  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
